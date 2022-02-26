@@ -67,7 +67,7 @@ function App() {
     isShowEditor: true,
     isAdmin: true,
     // Website colors
-    lightShade: "#FBC6E5",
+    lightShade: "#FFFFFF",
     lightAccent: "#ECD0D2",
     mainBrandColor: "#1D92B2",
     darkAccent: "#52A36E" ,
