@@ -33,7 +33,7 @@ const adminDefaults = { //These are just the values, functions are added in the 
     isAdmin: true,
     // Website colors
     lightShade: "#EEE4E8",
-    lightAccent: "#8BF6FD",
+    lightAccent: "#67E9B1",
     mainBrandColor: "#1D92B2",
     darkAccent: "#1F4C57" ,
     darkShade: "#1C191E",
@@ -61,16 +61,16 @@ export const WebContext = createContext()
 function App() {
 
   const [webStyle, setWebStyle] = useState({
-    siteName: "React Site-Creator",
+    siteName: "LaRae Day",
     isMobile: window.innerWidth <= 991,
     isEditMode: true,
     isShowEditor: true,
     isAdmin: true,
     // Website colors
-    lightShade: "#EEE4E8",
-    lightAccent: "#8BF6FD",
+    lightShade: "#FBC6E5",
+    lightAccent: "#ECD0D2",
     mainBrandColor: "#1D92B2",
-    darkAccent: "#1F4C57" ,
+    darkAccent: "#52A36E" ,
     darkShade: "#1C191E",
     // colorsUpdated: false,
     // widths

@@ -54,7 +54,7 @@ export default function NavBar(props) {
   const [isShowButtons, showButtons] = useState(false);
 
   const {webStyle, msgPort, appMethods, socialMedias, cart, masterNavData} = useContext(WebContext)
-  const [homeLinkText, setHomeLinkText] = useState("Site Creator")
+  const [homeLinkText, setHomeLinkText] = useState("LaRae Day")
   const [uniqueNavData, setUniqueNavData] = useState([]);
 
   const setNavData = (state) => {

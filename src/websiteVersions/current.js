@@ -37,29 +37,30 @@ export const site_template = {
       [
         {
           id:1,
-          name:"How It Works",
-          path:"/how-it-works"
+          name:"Blog",
+          path:"/blog"
         }, 
         {
           id:2,
-          name:"Need Help",
-          dropdown:
-            [
-              { name: "Get Professional Help", path: "/need-help", id: 6},
-              { name: "Install It Yourself", path: "/getting-started", id: 3},
-            ]
+          name:"Partnerships",
+          path:"/partnerships"
           
         },
         {
           id:4,
-          name:"Components",
-          path:"/components"
+          name:"Coaching",
+          dropdown:
+            [
+              { name: "Social Media Coaching", path: "/need-help", id: 6},
+              { name: "Talent Coaching", path: "/getting-started", id: 3},
+              { name: "Life Coaching", path: "/getting-started", id: 8},
+            ]
         },
         
         {
           id:5,
-          name:"Contact",
-          path:"/contact"
+          name:"Talent",
+          path:"/talent"
         }
       ],
       socialMedias:[
@@ -77,7 +78,7 @@ export const site_template = {
         { 
           name: "Header",
           id: `Site Creator-Header-0-589`,
-          content: { html: "React Site Creator" }
+          content: { html: "LaRae Day" }
         },
         {
           name: "Navbar",
