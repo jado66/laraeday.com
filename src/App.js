@@ -26,7 +26,7 @@ import {site_template} from "./websiteVersions/current"
 
 const adminDefaults = { //These are just the values, functions are added in the App component
   webStyle: {
-    siteName: "React Site-Creator",
+    siteName: "LaRae Day",
     isMobile: window.innerWidth <= 991,
     isEditMode: true,
     isShowEditor: true,
@@ -63,9 +63,9 @@ function App() {
   const [webStyle, setWebStyle] = useState({
     siteName: "LaRae Day",
     isMobile: window.innerWidth <= 991,
-    isEditMode: true,
-    isShowEditor: true,
-    isAdmin: true,
+    isEditMode: false,
+    isShowEditor: false,
+    isAdmin: false,
     // Website colors
     lightShade: "#FFFFFF",
     lightAccent: "#ECD0D2",
@@ -267,6 +267,8 @@ function App() {
       return () => {
           window.removeEventListener('resize', handleWindowSizeChange);
       }
+
+
   }, []);
 
   useEffect(() => {
@@ -627,7 +629,7 @@ function App() {
       <div className="App" style={{minHeight:"100vh", overflowX: "hidden",}}>
         {/* <span>{webStyle.isMobile?"M":"D"}</span> */}
 
-        <Router basename="/site-creator">
+        <Router >
           {/* <Navbar webStyle = {webStyle}/> */}
           {/* <Fade> */}
             <Switch>

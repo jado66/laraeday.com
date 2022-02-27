@@ -3,43 +3,38 @@ export const site_template = {
   pages: [
     {
       id:1,
-      name:"Site Creator",
+      name:"LaRae Day",
       path:"/"
     },
     {
       id:2,
-      name:"How It Works",
-      path:"/how-it-works"
+      name:"Partnerships",
+      path:"/partnerships"
     }, 
     {
       id:3,
-      name:"Need Help",
-      path:"/need-help"
+      name:"Social Media Coaching",
+      path:"/social-media-coaching"
     },
     {
       id:4,
-      name:"Getting Started",
-      path:"/getting-started"
+      name:"Talent Coaching",
+      path:"/talent-coaching"
     },
     {
       id:5,
-      name:"Components",
-      path:"/components"
+      name:"Life Coaching",
+      path:"/life-coaching"
     },
     
     {
       id: 6,
-      name:"Contact",
-      path:"/contact"
+      name:"Talent",
+      path:"/talent"
     }
           ],
   masterNavBarData: 
       [
-        {
-          id:1,
-          name:"Blog",
-          path:"/blog"
-        }, 
         {
           id:2,
           name:"Partnerships",
@@ -51,9 +46,9 @@ export const site_template = {
           name:"Coaching",
           dropdown:
             [
-              { name: "Social Media Coaching", path: "/need-help", id: 6},
-              { name: "Talent Coaching", path: "/getting-started", id: 3},
-              { name: "Life Coaching", path: "/getting-started", id: 8},
+              { name: "Social Media Coaching", path: "/social-media-coaching", id: 7},
+              { name: "Talent Coaching", path: "/talent-coaching", id: 8},
+              { name: "Life Coaching", path: "/life-coaching", id: 9},
             ]
         },
         
@@ -65,139 +60,72 @@ export const site_template = {
       ],
       socialMedias:[
         {
-          location  :"Github",
-          link:"https://github.com/jado66/site-creator"
+          location  :"Instagram",
+          link:"https://www.instagram.com/larae.day"
         },
         {
-          location  :"LinkedinIn",
-          link:"https://www.linkedin.com/in/jadonerwin/"
+          location  :"Tiktok",
+          link:"https://www.tiktok.com/@larae.day?"
+        },
+        {
+          location  :"Pinterest",
+          link:"https://www.pinterest.com/laraedaylifebylarae/_created/"
+        },
+        {
+          location  :"Facebook",
+          link: "https://www.facebook.com/larae.day.erwin"
         }
       ],
   
-    ["Site Creator"]: [
+    ["LaRae Day"]: [
         { 
           name: "Header",
-          id: `Site Creator-Header-0-589`,
+          id: `Home-Header-0-589`,
           content: { html: "LaRae Day" }
         },
-        {
-          name: "Navbar",
-          id: `Site Creator-Navbar-1-469 `,
-          content:{}
+        { 
+          name: "Header",
+          id: `Home-Header-0-489`,
+          content: { html: "This website is currently under construction" }
         },
         {
           name: "Paragraph",
-          id: `Site Creator-Paragraph-481`,
-          content: { html: `<h3>This website creator is a <strong>FREE</strong> tool built just for you! Create your own website complete with all the necessary components to build a successful blog, portfolio, or business site. You can try it out by modifying this website.</h3>
-          <p>
+          id: `Home-Paragraph-2-381`,
+          content: {html:`<p>
+          <br>
           </p>
-          <h3>Go ahead and add a new component. Hover your mouse (or tap if on a mobile device) in the margin right below this text. Then tap on a component you would like to add.</h3>`}
+          <p>
+          <br>
+          </p>
+          <p>
+          <br>
+          </p>
+          <p>
+          <br>
+          </p>
+          <p>
+          <br>
+          </p>
+          <p>
+          <br>
+          </p>
+          <p>
+          <br>
+          </p>`}
         },
-        {
-          name: "Paragraph",
-          id: `Site Creator-Paragraph-491`,
-          content: { html: `<h3>Now move the component. Hover your mouse right above the new component (you will see the cursor change to a hand), and then drag the component to a new spot. On mobile devices tap and hold to drag.</h3>`}
-        },
-        {
-          name: "CountDown",
-          id: `Site Creator-CountDown-2-381`,
-          content:
-            {
-              date: '2022-02-28',
-              includes: [true,true],
-              timeStyle: "Words",
-              finalText: "Hip Hip Hooray",
-            }
-          // content:{src: "construction.png"}
-        },
-        {
-          name: "Paragraph",
-          id: `Site Creator-Paragraph-2-381`,
-          content: { html: `<h3>You can use this website creator for <strong>FREE </strong>for personal or commercial use.* You only have to buy a domain name for your site and pay for hosting service, and unfortunately we can't provide you with either.</h3>
-                            <h3>If you would like help getting your website up and running with a domain name, business email, and this software, we are more than willing to help. Go to the <a href="need-help" rel="noopener noreferrer"  style="color: rgb(29, 146, 178);">Need Help</a>
-                            <span style="color: rgb(255, 255, 255);"> </span>page to get some professional assistance.</h3>
-                            `
-                    
-                        },
-        },
-        {
-          name: "Mosaic",
-          id: `Site Creator-Mosiac-3-387`,
-          content: {
-            lImageUrl:"test.png",
-            lTitle:"Get Your Own Site",
-            lSubTitle:"Pay Us Nothing",
-            lLinkText:"These are the steps",
-            lHref:"getting-started",
-            rImageUrl:"test2.png",
-            rTitle:"Everything Is Editable (Even This)",
-            rSubTitle:"Try editing this website",
-            rLinkText:"This tutorial explains how.",
-            rHref:"how-it-works"
-          }
-        },
-        // {
-        //   name: "ProductComparisonTable",
-        //   id: `Site Creator-ProductComparisonTable-4-984`,
-        //   content: {
-        //     header:"Site Generator Comparison",
-        //     colCount: 3,
-        //     colNameHtmls: [
-        //       "Wix Pro\n$27 / Month",
-        //       "WordPress Business\n$25 / Month",
-        //       "React Site Creator\n*100% Free"
-        //     ],
-        //     rowGroupCount: 2,
-        //     rowGroups: [4, 3],
-        //     comparisonRowContent: [
-        //       {
-        //         header: "Calender",
-        //         rowChecks: [true, true, true]
-        //       },
-        //       {
-        //         header: "Email List",
-        //         rowChecks: [true, true, true]
-        //       },
-        //       {
-        //         header: "Socials Analytics",
-        //         rowChecks: [false, false, true]
-        //       },
-        //       {
-        //         header: "Modern Web Technology**",
-        //         rowChecks: [false, false, true]
-        //       },
-        //       {
-        //         header: "Instant Changes",
-        //         rowChecks: [false, false, true]
-        //       },
-        //       {
-        //         header: "Free To Use ***",
-        //         rowChecks: [false, false, true]
-        //       },
-        //       {
-        //         header: "Add your own",
-        //         rowChecks: [false, true, true]
-        //       }
-        //     ],
-        //     captionHtml: `<div>* We don't provide domain names or web hosting (neither are free but it will still cheaper than the alternatives). Go to the "Get Your Own" page to get some pointers.</div>
-        //                   <div>** Wix and Wordpress are built using PHP which was created in 1994. We rely primarily on React which was released almost 2 decades later</div>
-        //                   <div>*** Wix and Wordpress are both "Free to use" but expect to pay for any necessary features</div>`
-        //   }
-      
-        // },
         {
           name: "Footer",
-          id: `Site Creator-Footer-5-${ String(new Date().getTime()).slice(-3) }`,
+          id: `Site Creator-Footer-596`,
           content:{}
 
         }
     ],
-    ["Getting Started"]: [
+    ["Partnerships"]: [
       {
         name: "Header",
         id: `Getting Started-Header-0-654`,
         type: "h1",
-        content: { html: "React Site Creator" }
+        content: { html: "Partnerships" }
       },
       {
         name: "Navbar",
@@ -278,7 +206,7 @@ export const site_template = {
         content: { }
       }
     ],
-    ["Need Help"]:[
+    ["Social Media Coaching"]:[
       {
         name: "Header",
         id: `Need Help-Header-0-654`,

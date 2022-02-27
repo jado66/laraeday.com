@@ -108,7 +108,7 @@ export default function QuillComponent(props){
           />
         </div>:
         <div className="relative-div text-left " onMouseEnter={() => {showButtons(true)}} onMouseLeave={() => {showButtons(false)}}>
-          {isShowButtons&& <div className="relative-r">
+          {isShowButtons&& webStyle.isAdmin && <div className="relative-r">
             <FontAwesomeIcon icon = {faPencilAlt} onClick={()=>{setEdit(true)}}/>
           </div>}
           <div className={props.className} style = {{color: webStyle.darkShade}}>

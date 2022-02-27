@@ -81,7 +81,7 @@ export default function SocialLinks(props) {
     );
 
     return(
-            <div className='mt-3' style = {{width:`50%`, margin:"25px auto"}}>
+            <div className='mt-3' style = {{width:`50%`, margin:"25px auto"}} data-no-dnd = "true">
               <div className='row' style={{justifyContent:"space-evenly"}}>
                 {socialLinks}
               </div>
