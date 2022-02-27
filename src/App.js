@@ -70,7 +70,7 @@ function App() {
     lightShade: "#FFFFFF",
     lightAccent: "#ECD0D2",
     mainBrandColor: "#1D92B2",
-    darkAccent: "#52A36E" ,
+    darkAccent: "#71967b" ,
     darkShade: "#1C191E",
     // colorsUpdated: false,
     // widths

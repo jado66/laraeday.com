@@ -83,30 +83,22 @@ export const site_template = {
           id: `Home-Header-0-589`,
           content: { html: "LaRae Day" }
         },
-        { 
-          name: "Header",
-          id: `Home-Header-0-489`,
-          content: { html: "This website is currently under construction" }
+        {
+          name: "CountDown",
+          id: `Site Creator-CountDown-2-381`,
+          content:
+            {
+              date: '2022-03-9',
+              includes: [true,true],
+              timeStyle: "Words",
+              finalText: "",
+            }
+          // content:{src: "construction.png"}
         },
         {
           name: "Paragraph",
           id: `Home-Paragraph-2-381`,
           content: {html:`<p>
-          <br>
-          </p>
-          <p>
-          <br>
-          </p>
-          <p>
-          <br>
-          </p>
-          <p>
-          <br>
-          </p>
-          <p>
-          <br>
-          </p>
-          <p>
           <br>
           </p>
           <p>
