@@ -1,4 +1,6 @@
 import { useState, useEffect, createContext } from "react";
+import Amplify, { API, graphqlOperation } from 'aws-amplify'
+
 import { addSubscriber } from "./ApiHooks";
 import {
   BrowserRouter as Router,
