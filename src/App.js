@@ -1,4 +1,5 @@
 import { useState, useEffect, createContext } from "react";
+import { addSubscriber } from "./ApiHooks";
 import {
   BrowserRouter as Router,
   Switch,
@@ -250,7 +251,9 @@ function App() {
       setSavedData(newSavedData)
 
       // alert(JSON.stringify(newSavedData,null,4))
-    }
+    },
+
+    addSubscriber:addSubscriber
   }  
 
 

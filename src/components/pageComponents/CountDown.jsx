@@ -241,7 +241,7 @@ export default function CountDown(props) {
           setShowButtons(false);
         }}
       >
-        {timeStr.length > 1 && (
+        {/* {timeStr.length > 1 && (
           <input
             className="mb-3 h1"
             type="text"
@@ -249,7 +249,7 @@ export default function CountDown(props) {
             value={"Website is Currently Under Construction:"}
             style={{ textAlign: "center", border: "none" ,color:webStyle.lightShade,background:"none"}}
           />
-        )}
+        )} */}
 
         {timeStr.length > 1 ? (
           <span className="mb-3 text-center h2" style={{color:webStyle.lightShade}}>{timeStr}</span>

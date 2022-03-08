@@ -81,17 +81,31 @@ export const site_template = {
         { 
           name: "Header",
           id: `Home-Header-0-589`,
-          content: { html: "LaRae Day" }
+          content: { html: "Coming Soon" }
+        },
+        {
+          name: "Paragraph",
+          id: `Home-Paragraph-2-381`,
+          content: {html:`<h3 class="text-center">LaRaeDay.com</h3>`}
         },
         {
           name: "CountDown",
-          id: `Site Creator-CountDown-2-381`,
+          id: `Home-CountDown-2-381`,
           content:
             {
-              date: '2022-03-9',
+              date: '2022-03-15',
               includes: [true,true],
               timeStyle: "Words",
               finalText: "",
+            }
+          // content:{src: "construction.png"}
+        },
+        {
+          name: "SubscriberBox",
+          id: `Home-SubscriberBox-2-381`,
+          content:
+            {
+              header: "Subscribe here to learn more"
             }
           // content:{src: "construction.png"}
         },
@@ -100,8 +114,6 @@ export const site_template = {
           id: `Home-Paragraph-2-381`,
           content: {html:`<p>
           <br>
-          </p>
-          <p>
           <br>
           </p>`}
         },
@@ -126,71 +138,18 @@ export const site_template = {
 
       },
       {
-        name: "WalkThrough",
-        id: `Getting Started-WalkThrough-2-886`,
-        content: {
-          pagePath:"getting-started",
-          links: [],
-          html: `<h1 id ="Prerequisites-h1">Prerequisites</h1>
-                  <p><strong>TLDR: </strong>To start, you need a website hosting provider and a domain name. While there are free options they probably won't work for a business and other websites.</p>
-                  <br>
-                  <p>React Site Creator is a completely free software (for private and most commercial uses) but there are a couple of items required to set up and deploy the site creator. This walkthrough will guide you through start to finish.</p>
-                  <h2 id = "HostingOptions-h2">Hosting Options</h2>
-                      <p>In order for people to visit the website it needs to be hosted. There are many different options when it comes to website hosting including a few free options (although they might not fit your needs).</p>
-              
-                      <h3 id = "GitHubPages-h3">GitHub Pages</h3>
-                          <p>For hobbyists or STEM professionals, GitHub provides free website hosting through <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. This website is hosted on GitHub Pages but will eventually move to its own site when necessary.</p><h4>GitHub Pages is Static Only</h4><p>* Please note that GitHub Pages can only deploy client-side websites. Because a server-side computer is not involved, users will <strong>not</strong> be able to modify anything permanently on the page. This means users will not be able to send you any information. </p>
-                          <br>
-                          <p>- For example if a blog component has comments enabled, users will be able to comment, but there comments will only be visible to them.</p><h3>Hosting Providers</h3><p>For a business website, or any situation where users need to be able to modify the data (make an appointment, post a comment), you will a hosting service that provides a server.</p><br><p>Do some research and pick a provider that best suites your needs. You can expect to pay anywhere from $10-$100+ a month to have you site hosted (the price will depend on the amount of traffic the website will have and the additional features and functionality offered).  Here are some references to aid in your search:</p>
-                          <ul>
-                              <li><a href="https://www.pcmag.com/picks/the-best-web-hosting-services" target="_blank">The Best Web Hosting Services</a></li>
-                              <li><a href="https://www.websitebuilderexpert.com/web-hosting/comparisons/" target="_blank">Web Hosting Comparison</a></li>
-                          </ul>
-                          <br>
-                          <p>After you have selected and started a hosting plan you need to get a domain name for your site.</p>
-                          <br>
-                  <h2 id = "ObtainADomain-h2">Obtain a Domain</h2>
-                      <p>If you have chosen to host your site through a free web-hosting service (again, this is probably not a good option for businesses), you may have a subdomain (ex. GitHubPages gives you a free subdomain at &lt;Username&gt; .github.io/&lt;WebsiteName&gt;/)</p>
-                      <br>
-                      <p>If do not have a subdomain provided for you, you need to rent a domain/lease a domain name. There are plenty of providers that offer essentially the same service. You really can't go wrong so long as you stick to a known brand. Google <a href="https://domains.google/" target="_blank">offers</a> domain names at around $12 a year. </p>
-                      <br>
-                <h1 id = "SetUp-h1">Set Up</h1>
-                  <h2 id = "InstallNode.Js-h2">Install Node.js</h2>
-                  <p>To download React-Site-Creator you will need to first download <a href = "https://nodejs.org/en/download/">Node.js</a>. Node.Js comes with Node package manager (npm) which is where we can pull the code for the React Site Creator.</p>
-                  <h2 id = "CloneSiteCreator-h2">Download and Configure the React-Site-Creator</h2>
-                      <p>The next steps are dependent on how you want your website configured. There are two different versions of the application: the first is for static websites, and the second is for dynamic websites.</p>
-                      <br>
-                      <h3>Static or Dynamic?</h3>
-                          <p>A static website is one which a user can't change. They may be able to interact with widgets, click buttons, etc., but they won't be to change the website for another user.</p> 
-                          <br>
-                          <p>Dynamic websites, on the otherhand, allow for users to manipulate the website. To illustrate the difference, the following examples are only implementable on dynamic sites</p>
-                          <ul>
-                              <li>Users to write comments on blog posts</li>
-                              <li>Users blocking out specific appointment times</li>
-                              <li>Having a limit on shop items (i.e. item is sold out)</li> 
-                          </ul>
-                          <br>
-                          <p>If you are still unsure, go with the dynamic website because you won't be limited to static only components.</p>
-                      <h3>Static Website</h3>
-                          <p>If your are going with a dynamic site skip this step. </p> 
-                          <br>
-                          <p>Open a terminal on your computer.</p>
-                          <code>git clone https://github.com/jado66/site-creator.git</code>
-                          <code>npm start</code>
-                      <h3>Dynamic Website</h3>
-                        <br>
-                        <p>Open a terminal on your computer.</p>
-                        <code>git clone https://github.com/jado66/site-creator.git</code>
-                        <code>npm start</code>
-                <h1 id = "CustomizeYourWebsite-h1">Customize Your Website</h1>
-                    <p>Everything is customizable. To edit make sure you are logged in.</p>
-                    <p>Everything is customizable. To edit make sure you are logged in.</p>
-        
-  
-  
-                `
-          
-        }
+        name: "Paragraph",
+        id: `Home-Paragraph-2-381`,
+        content: {html:`<p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        </p>`}
       },
       {
         name: "Footer",
@@ -210,29 +169,6 @@ export const site_template = {
         id: `Need Help-Navbar-1-381`,
         content:{}
 
-      },
-      {
-        name: "Paragraph",
-        id: `Need Help-Paragraph-2-381`,
-        content: 
-          { html: `<h3>When creating a website you need a few things:</h3>
-          <h5 class="ql-indent-1">
-          <br>
-          </h5>
-          <h3 class="ql-indent-1">1) Purchase a domain name</h3>
-          <h3 class="ql-indent-1">2) Find hosting service</h3>
-          <h3 class="ql-indent-1">3) Set up the server computer</h3>
-          <h3 class="ql-indent-1">4) Develop the website</h3>
-          <h5 class="ql-indent-1">
-          <br>
-          </h5>
-          <h3>Without this software the last step is the most costly and takes the most time. Some sources say it takes a minimum of 14 weeks to develop a website. Paying an Full Stack Engineer's wages for a minimum of 14 weeks could cost you upwards of tens of thousands. With this software the last step is much much easier.</h3>
-          <p>
-          </p>
-          <h3>We can help you with all of the steps. </h3>
-          `
-          },
-          // - 
       },
       {
         name:"ProductComparisonCards",
@@ -278,6 +214,7 @@ export const site_template = {
         }
       }
     ],
+    
     ["How It Works"]: [
       { 
         name: "Header",

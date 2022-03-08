@@ -46,7 +46,7 @@ import CountDown from "./pageComponents/CountDown";
 import Appointments from "./pageComponents/Appointments";
 import PhotoGallery from "./pageComponents/PhotoGallery";
 import AdminWrapper from "./wrappers/AdminWrapper";
-
+import SubscriberBox from "./pageComponents/SubscriberBox";
 import {WebContext} from "../App"
 
 export default function DynamicPage(props) {
@@ -106,7 +106,8 @@ export default function DynamicPage(props) {
     WalkThrough:WalkThrough,
     CountDown:CountDown,
     Appointments:Appointments,
-    PhotoGallery:PhotoGallery
+    PhotoGallery:PhotoGallery,
+    SubscriberBox:SubscriberBox
   
   };
 
