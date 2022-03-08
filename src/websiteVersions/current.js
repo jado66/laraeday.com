@@ -110,14 +110,6 @@ export const site_template = {
           // content:{src: "construction.png"}
         },
         {
-          name: "Paragraph",
-          id: `Home-Paragraph-2-381`,
-          content: {html:`<p>
-          <br>
-          <br>
-          </p>`}
-        },
-        {
           name: "Footer",
           id: `Site Creator-Footer-596`,
           content:{}
