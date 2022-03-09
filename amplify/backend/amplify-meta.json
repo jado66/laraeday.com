@@ -1,0 +1,41 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-laraeday-dev-173518-authRole",
+      "UnauthRoleArn": "arn:aws:iam::873479032390:role/amplify-laraeday-dev-173518-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::873479032390:role/amplify-laraeday-dev-173518-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-laraeday-dev-173518-deployment",
+      "UnauthRoleName": "amplify-laraeday-dev-173518-unauthRole",
+      "StackName": "amplify-laraeday-dev-173518",
+      "StackId": "arn:aws:cloudformation:us-east-1:873479032390:stack/amplify-laraeday-dev-173518/0a54f7f0-9f30-11ec-980f-0e6c58f1d021",
+      "AmplifyAppId": "d3nickd7ttnh82"
+    }
+  },
+  "api": {
+    "laraeday": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "xkh2yt23lzg4pjszawym7uc23q",
+        "GraphQLAPIEndpointOutput": "https://iafrlvhfujhadfbgx2nxv2tw6m.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-f5imegqqqvbr5lfzsu7yrwdamm"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-laraeday-dev-173518-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apilaraeday"
+      },
+      "lastPushTimeStamp": "2022-03-08T22:46:44.492Z",
+      "lastPushDirHash": "Li/Xd6jSzhBRgKgw/akfPodj4D8="
+    }
+  }
+}

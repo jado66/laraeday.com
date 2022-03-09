@@ -1,0 +1,155 @@
+
+type Subscriber {
+  id: ID!
+  name: String!
+  email: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelSubscriberConnection {
+  items: [Subscriber]!
+  nextToken: String
+}
+
+input ModelSubscriberFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  email: ModelStringInput
+  and: [ModelSubscriberFilterInput]
+  or: [ModelSubscriberFilterInput]
+  not: ModelSubscriberFilterInput
+}
+
+type Query {
+  getSubscriber(id: ID!): Subscriber
+  listSubscribers(filter: ModelSubscriberFilterInput, limit: Int, nextToken: String): ModelSubscriberConnection
+}
+
+input ModelSubscriberConditionInput {
+  name: ModelStringInput
+  email: ModelStringInput
+  and: [ModelSubscriberConditionInput]
+  or: [ModelSubscriberConditionInput]
+  not: ModelSubscriberConditionInput
+}
+
+input CreateSubscriberInput {
+  id: ID
+  name: String!
+  email: String
+}
+
+input UpdateSubscriberInput {
+  id: ID!
+  name: String
+  email: String
+}
+
+input DeleteSubscriberInput {
+  id: ID!
+}
+
+type Mutation {
+  createSubscriber(input: CreateSubscriberInput!, condition: ModelSubscriberConditionInput): Subscriber
+  updateSubscriber(input: UpdateSubscriberInput!, condition: ModelSubscriberConditionInput): Subscriber
+  deleteSubscriber(input: DeleteSubscriberInput!, condition: ModelSubscriberConditionInput): Subscriber
+}
+
+type Subscription {
+  onCreateSubscriber: Subscriber @aws_subscribe(mutations: ["createSubscriber"])
+  onUpdateSubscriber: Subscriber @aws_subscribe(mutations: ["updateSubscriber"])
+  onDeleteSubscriber: Subscriber @aws_subscribe(mutations: ["deleteSubscriber"])
+}
+
