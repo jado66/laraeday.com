@@ -15,7 +15,7 @@ export default function AdminNavWrapper(props) {
   } = useSortable({ id: props.id });
 
   const style = {
-    cursor: isDragging ? "move" : props.isEdit ? "auto" : "grab",
+    cursor: isDragging ? "move" : props.isEdit ? "auto" : "auto",
     opacity: isDragging ? 0.5 : 1,
     transform: CSS.Translate.toString(transform),
     transition

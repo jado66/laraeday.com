@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-laraeday-dev-173518-authRole",
+      "UnauthRoleArn": "arn:aws:iam::873479032390:role/amplify-laraeday-dev-173518-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::873479032390:role/amplify-laraeday-dev-173518-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-laraeday-dev-173518-deployment",
+      "UnauthRoleName": "amplify-laraeday-dev-173518-unauthRole",
+      "StackName": "amplify-laraeday-dev-173518",
+      "StackId": "arn:aws:cloudformation:us-east-1:873479032390:stack/amplify-laraeday-dev-173518/0a54f7f0-9f30-11ec-980f-0e6c58f1d021",
+      "AmplifyAppId": "d3nickd7ttnh82"
+    }
+  }
+}

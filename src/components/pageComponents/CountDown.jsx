@@ -266,7 +266,7 @@ export default function CountDown(props) {
           />
         )}
 
-        {showButtons && (
+        {showButtons && webStyle.isEditMode && (
           <div className="position-absolute top-0 end-0 p-2">
             <button
               className="btn btn-light"

@@ -173,9 +173,9 @@ export default function DynamicPage(props) {
     <div style ={{backgroundColor:webStyle.lightShade}}>
       {/* style={{backgroundColor:this.props.webStyle.lightShade}} */}
       <div id = "outerSection" className={"min-vh-100"+(webStyle.isMobile?" ":" container")} >
-        <div id = "innerSection" className="col justify-items-baseline boxShadow min-vh-100 pb-4 pt-4" style={{backgroundColor:webStyle.lightAccent}}>
+        <div id = "innerSection" className="col justify-items-baseline boxShadow min-vh-100 py-2" style={{backgroundColor:webStyle.lightAccent}}>
 
-          <DndContext
+          {/* <DndContext
             sensors={sensors}
             modifiers = {[restrictToVerticalAxis]}
             collisionDetection={closestCenter}
@@ -185,14 +185,14 @@ export default function DynamicPage(props) {
             <SortableContext
               items={components}
               strategy={verticalListSortingStrategy}
-            >
+            > */}
               {/* <span className="mt-5 bg-warning">{JSON.stringify(webStyle)}</span> */}
 
               {pagecomponents}
-            </SortableContext>
+            {/* </SortableContext>
             <DragOverlay>{activeID ? <OverlaySpot id = {activeID}/> : null}</DragOverlay>
 
-          </DndContext>
+          </DndContext> */}
           {/* <span>Selected: {JSON.stringify(selectedComponents)}</span> */}
         </div>
 

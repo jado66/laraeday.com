@@ -1,4 +1,6 @@
 import { useState, useEffect, createContext } from "react";
+import Amplify, { API, graphqlOperation } from 'aws-amplify'
+
 import { addSubscriber } from "./ApiHooks";
 import {
   BrowserRouter as Router,
@@ -21,9 +23,15 @@ import AdminPage from "./pages/AdminPage"
 import AdminLogin from "./pages/AdminLogin"
 import Page404 from "./pages/Page404"
 
+import awsExports from './aws-exports';
+
+
 
 // Data
 import {site_template} from "./websiteVersions/current"
+
+Amplify.configure(awsExports);
+
 
 const adminDefaults = { //These are just the values, functions are added in the App component
   webStyle: {
