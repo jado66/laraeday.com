@@ -63,8 +63,8 @@ export default function SubscriberBox(props){
     }
 
     return(
-
-      <div className="px-5 text-center w-50 mx-auto boxShadow py-3 rounded" data-no-dnd="true" style={{backgroundColor:webStyle.darkShade}}>
+    <div className='px-5'>
+      <div className={"px-5 text-center mx-auto boxShadow py-3 rounded "+(webStyle.isMobile?"":"w-50")} data-no-dnd="true" style={{backgroundColor:webStyle.darkShade}}>
         <ContentEditable
           className='apply-font-primary mb-4'
           style={{color:webStyle.lightShade}}
@@ -97,8 +97,8 @@ export default function SubscriberBox(props){
                     />
                 </div>
                 
-                <div className = "form-group col-3 d-flex">
-                    <button type='button' className = "btn btn-light my-auto " onClick={addNewSubscriber}>Sign Me Up</button>
+                <div className = {"form-group d-flex " + (webStyle.isMobile?"col-5":"col-3")}>
+                    <button type='button' className = "btn btn-light my-auto text-nowrap" onClick={addNewSubscriber}>Sign Me Up</button>
 
                 </div>
 
@@ -106,6 +106,6 @@ export default function SubscriberBox(props){
            
         </form>
       </div>
-
+      </div>
       )
   };
