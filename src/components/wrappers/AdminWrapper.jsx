@@ -19,7 +19,7 @@ export default function AdminWrapper(props) {
   } = useSortable({ id: props.id });
 
   const style = {
-    cursor: isDragging ? "move" : "grab",
+    cursor: isDragging ? "move" : "auto",
     // opacity: isDragging ? 0.5 : 1,
     transform: CSS.Translate.toString(transform),
     transition

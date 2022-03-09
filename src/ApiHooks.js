@@ -6,9 +6,9 @@ export async function addSubscriber(subscriberFormState) {
       if (!subscriberFormState.name || !subscriberFormState.email) return
       const subscriber = {...subscriberFormState}
       await API.graphql(graphqlOperation(createSubscriber, {input: subscriber}))
-      alert("Success")
-    } catch (err) {
-      alert('error creating todo:', err)
-    }
-    alert(`Adding new subscriber :${JSON.stringify(subscriberFormState)}`)
+      alert(`You have been added to the mailing list!`)
+    } 
+    catch (err) {
+        alert(err)
+       }
   }

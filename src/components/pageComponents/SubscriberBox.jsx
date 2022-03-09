@@ -75,29 +75,35 @@ export default function SubscriberBox(props){
           onChange={handleChange} // handle innerHTML change
           tagName='h3' // Use a custom HTML tag (uses a div by default)
           /> 
-        <form className=' rounded' >
-            <div className = "form-group">
-                <input 
-                    type="text" 
-                    className = "form-control mb-2" 
-                    id="name" 
-                    placeholder="Name" 
-                    value={formState.name}
-                    onChange = {event => handleFormChange("name",event.target.value)}
-                />
+        <form className=' rounded mb-3' >
+            <div className='row'>
+                <div className = "form-group col">
+                    <input 
+                        type="text" 
+                        className = "form-control mb-2" 
+                        id="name" 
+                        placeholder="Name" 
+                        value={formState.name}
+                        onChange = {event => handleFormChange("name",event.target.value)}
+                    />
+                    <input 
+                        type="email" 
+                        className = "form-control" 
+                        id="email" 
+                        aria-describedby="emailHelp" 
+                        placeholder="Enter Email" 
+                        value={formState.email} 
+                        onChange = {event => handleFormChange("email",event.target.value)}
+                    />
+                </div>
+                
+                <div className = "form-group col-3 d-flex">
+                    <button type='button' className = "btn btn-light my-auto " onClick={addNewSubscriber}>Sign Me Up</button>
+
+                </div>
+
             </div>
-            <div className = "form-group">
-                <input 
-                    type="email" 
-                    className = "form-control mb-4" 
-                    id="email" 
-                    aria-describedby="emailHelp" 
-                    placeholder="Enter Email" 
-                    value={formState.email} 
-                    onChange = {event => handleFormChange("email",event.target.value)}
-                />
-            </div>
-            <button type='button' className = "btn btn-light" onClick={addNewSubscriber}>Sign Me Up</button>
+           
         </form>
       </div>
 

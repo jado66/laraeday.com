@@ -57,7 +57,7 @@ export default function Spacer(props) {
         <div className="px-5">
         <hr
           className="m-0 p-0 w-100 mx-auto bg-primary"
-          style={{ height: "4px", display: isShowBar ? "" : "none" }}
+          style={{ height: "4px", display: isShowBar && props.edit ? "" : "none" }}
         />
         </div>
         }
