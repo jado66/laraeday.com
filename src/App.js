@@ -16,7 +16,9 @@ function App() {
     
 
   return (
-    <Website/>
+    <Website
+      addNewSubscriber = {(subscriberFormState)=>addSubscriber(subscriberFormState)}
+    />
   )
 }
 
