@@ -29,6 +29,7 @@
     "react-reveal": "^1.2.2",
     "react-router-dom": "5",
     "react-scripts": "5.0.0",
+    "reactive-site-creator": "^0.1.12",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
