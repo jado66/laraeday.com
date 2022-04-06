@@ -14,21 +14,8 @@ Amplify.configure(awsExports);
 
 function App() {
 
-  // useEffect(() => {
-  //   async function fetchMyAPI() {
-  //     let response = await checkIP()
-      
-  //     // alert(response)
-  //     setIsAthenticated(response)
-  //   }
-
-  //   fetchMyAPI()
-  // },[]);
-
-
   return (
     <>
-      
       <Website
         addNewSubscriber = {subscriberFormState=>addSubscriber(subscriberFormState)}
         getFromDataBase = {key=>getFromDatabase(key)}
