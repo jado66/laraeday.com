@@ -34,8 +34,8 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-laraeday-dev-173518-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apilaraeday"
       },
-      "lastPushTimeStamp": "2022-03-08T22:46:44.492Z",
-      "lastPushDirHash": "Li/Xd6jSzhBRgKgw/akfPodj4D8="
+      "lastPushTimeStamp": "2022-04-05T00:17:02.034Z",
+      "lastPushDirHash": "+FAsvc87h6V4JMt9N3M107Og+oQ="
     }
   }
 }

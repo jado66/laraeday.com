@@ -8,3 +8,8 @@ type Subscriber @model {
   name: String!
   email: String
 }
+
+type SiteData @model {
+  key: String! @primaryKey
+  value: String!
+}

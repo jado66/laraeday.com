@@ -30,3 +30,38 @@ export const listSubscribers = /* GraphQL */ `
     }
   }
 `;
+export const getSiteData = /* GraphQL */ `
+  query GetSiteData($key: String!) {
+    getSiteData(key: $key) {
+      key
+      value
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listSiteData = /* GraphQL */ `
+  query ListSiteData(
+    $key: String
+    $filter: ModelSiteDataFilterInput
+    $limit: Int
+    $nextToken: String
+    $sortDirection: ModelSortDirection
+  ) {
+    listSiteData(
+      key: $key
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
+      items {
+        key
+        value
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;

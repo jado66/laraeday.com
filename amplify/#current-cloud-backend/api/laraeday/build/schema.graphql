@@ -7,6 +7,13 @@ type Subscriber {
   updatedAt: AWSDateTime!
 }
 
+type SiteData {
+  key: String!
+  value: String!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
 input ModelStringInput {
   ne: String
   eq: String
@@ -115,6 +122,8 @@ input ModelSubscriberFilterInput {
 type Query {
   getSubscriber(id: ID!): Subscriber
   listSubscribers(filter: ModelSubscriberFilterInput, limit: Int, nextToken: String): ModelSubscriberConnection
+  getSiteData(key: String!): SiteData
+  listSiteData(key: String, filter: ModelSiteDataFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelSiteDataConnection
 }
 
 input ModelSubscriberConditionInput {
@@ -145,11 +154,51 @@ type Mutation {
   createSubscriber(input: CreateSubscriberInput!, condition: ModelSubscriberConditionInput): Subscriber
   updateSubscriber(input: UpdateSubscriberInput!, condition: ModelSubscriberConditionInput): Subscriber
   deleteSubscriber(input: DeleteSubscriberInput!, condition: ModelSubscriberConditionInput): Subscriber
+  createSiteData(input: CreateSiteDataInput!, condition: ModelSiteDataConditionInput): SiteData
+  updateSiteData(input: UpdateSiteDataInput!, condition: ModelSiteDataConditionInput): SiteData
+  deleteSiteData(input: DeleteSiteDataInput!, condition: ModelSiteDataConditionInput): SiteData
 }
 
 type Subscription {
   onCreateSubscriber: Subscriber @aws_subscribe(mutations: ["createSubscriber"])
   onUpdateSubscriber: Subscriber @aws_subscribe(mutations: ["updateSubscriber"])
   onDeleteSubscriber: Subscriber @aws_subscribe(mutations: ["deleteSubscriber"])
+  onCreateSiteData: SiteData @aws_subscribe(mutations: ["createSiteData"])
+  onUpdateSiteData: SiteData @aws_subscribe(mutations: ["updateSiteData"])
+  onDeleteSiteData: SiteData @aws_subscribe(mutations: ["deleteSiteData"])
+}
+
+type ModelSiteDataConnection {
+  items: [SiteData]!
+  nextToken: String
+}
+
+input ModelSiteDataFilterInput {
+  key: ModelStringInput
+  value: ModelStringInput
+  and: [ModelSiteDataFilterInput]
+  or: [ModelSiteDataFilterInput]
+  not: ModelSiteDataFilterInput
+}
+
+input ModelSiteDataConditionInput {
+  value: ModelStringInput
+  and: [ModelSiteDataConditionInput]
+  or: [ModelSiteDataConditionInput]
+  not: ModelSiteDataConditionInput
+}
+
+input CreateSiteDataInput {
+  key: String!
+  value: String!
+}
+
+input UpdateSiteDataInput {
+  key: String!
+  value: String
+}
+
+input DeleteSiteDataInput {
+  key: String!
 }
 

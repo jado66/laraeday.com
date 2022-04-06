@@ -43,3 +43,53 @@ export const deleteSubscriber = /* GraphQL */ `
     }
   }
 `;
+export const createSiteData = /* GraphQL */ `
+  mutation CreateSiteData(
+    $input: CreateSiteDataInput!
+    $condition: ModelSiteDataConditionInput
+  ) {
+    createSiteData(input: $input, condition: $condition) {
+      key
+      value
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createOrUpdataSiteData = /* GraphQL */ `
+  mutation CreateOrUpdateSiteData(
+    $input: CreateSiteDataInput!
+    $condition: ModelSiteDataConditionInput
+  ) {
+    createSiteData(input: $input, condition: $condition) {
+      key
+      value
+    }
+  }
+`;
+export const updateSiteData = /* GraphQL */ `
+  mutation UpdateSiteData(
+    $input: UpdateSiteDataInput!
+    $condition: ModelSiteDataConditionInput
+  ) {
+    updateSiteData(input: $input, condition: $condition) {
+      key
+      value
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteSiteData = /* GraphQL */ `
+  mutation DeleteSiteData(
+    $input: DeleteSiteDataInput!
+    $condition: ModelSiteDataConditionInput
+  ) {
+    deleteSiteData(input: $input, condition: $condition) {
+      key
+      value
+      createdAt
+      updatedAt
+    }
+  }
+`;

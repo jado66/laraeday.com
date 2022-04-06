@@ -34,3 +34,33 @@ export const onDeleteSubscriber = /* GraphQL */ `
     }
   }
 `;
+export const onCreateSiteData = /* GraphQL */ `
+  subscription OnCreateSiteData {
+    onCreateSiteData {
+      key
+      value
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateSiteData = /* GraphQL */ `
+  subscription OnUpdateSiteData {
+    onUpdateSiteData {
+      key
+      value
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteSiteData = /* GraphQL */ `
+  subscription OnDeleteSiteData {
+    onDeleteSiteData {
+      key
+      value
+      createdAt
+      updatedAt
+    }
+  }
+`;

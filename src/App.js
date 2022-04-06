@@ -1,45 +1,43 @@
-import { useState, useEffect, createContext } from "react";
-import Amplify, { API, graphqlOperation } from 'aws-amplify'
+import Amplify, { API, graphqlOperation, JS } from 'aws-amplify'
 
-import { addSubscriber } from "./ApiHooks";
+import { addSubscriber, getFromDatabase, checkIP, createOrUpdataSiteData } from "./ApiHooks";
 
 import awsExports from './aws-exports';
 
+import { useState, useEffect } from 'react';
 
-
-
+import { createSiteData, deleteSiteData, updateSiteData } from './graphql/mutations'
 
 import Website from "reactive-site-creator/dist/components/Website";
+import { getSiteData, listSiteData } from './graphql/queries';
 Amplify.configure(awsExports);
 
 function App() {
-    
+  const [isAuthenticated, setIsAthenticated] = useState(false)
+
+  useEffect(() => {
+    async function fetchMyAPI() {
+      let response = await checkIP()
+      
+      // alert(response)
+      setIsAthenticated(response)
+    }
+
+    fetchMyAPI()
+  },[]);
+
 
   return (
-    <Website
-      addNewSubscriber = {(subscriberFormState)=>addSubscriber(subscriberFormState)}
-    />
+    <>
+      
+      <Website
+        addNewSubscriber = {subscriberFormState=>addSubscriber(subscriberFormState)}
+        getFromDataBase = {key=>getFromDatabase(key)}
+        saveComponentToDB = {(key,value)=>createOrUpdataSiteData(key,value)}
+        isAdmin = {isAuthenticated}
+      />
+    </>
   )
 }
 
 export default App;
-
-
-
-
-
-/*
- <Route path="/test">
-              { <TestPage/> 
-              <DynamicPage  webStyle = {webStyle} userIsAdmin = {userIsAdmin} viewAsNormalUser = {viewAsNormalUser}
-                            defaultComponentList = { ["Header","Navbar","Mosaic","Header","Mosaic","BlogPreview"]}  componentOptions = {["Navbar","Header","Mosaic","DynamicForm","CardPaymentBlock","BlogPreview"]}
-                               updateWebStyles = {updateWebStyles} closeStyleEditor = {hideWebsiteStyleEditor} showStyleEditor = {isShowEditor}/>
-          </Route>
-          <Route path="/blog-post/:id" component = {ViewPostPage}/>
-          <Route path="/">
-          <DynamicPage  webStyle = {webStyle} userIsAdmin = {userIsAdmin} viewAsNormalUser = {viewAsNormalUser}
-                            defaultComponentList = { ["Header","Navbar","Mosaic","Header","Mosaic","BlogPreview"]}  componentOptions = {["Navbar","Header","Mosaic","DynamicForm","CardPaymentBlock","BlogPreview"]}
-                               updateWebStyles = {updateWebStyles} closeStyleEditor = {hideWebsiteStyleEditor} showStyleEditor = {isShowEditor}/>
-          </Route>
-          
-*/
