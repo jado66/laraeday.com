@@ -13,20 +13,17 @@ import { getSiteData, listSiteData } from './graphql/queries';
 Amplify.configure(awsExports);
 
 function App() {
-  const [isAuthenticated, setIsAthenticated] = useState(
-    window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.hostname === ""
-  )
 
-  useEffect(() => {
-    async function fetchMyAPI() {
-      let response = await checkIP()
+  // useEffect(() => {
+  //   async function fetchMyAPI() {
+  //     let response = await checkIP()
       
-      // alert(response)
-      setIsAthenticated(response)
-    }
+  //     // alert(response)
+  //     setIsAthenticated(response)
+  //   }
 
-    fetchMyAPI()
-  },[]);
+  //   fetchMyAPI()
+  // },[]);
 
 
   return (
@@ -36,7 +33,7 @@ function App() {
         addNewSubscriber = {subscriberFormState=>addSubscriber(subscriberFormState)}
         getFromDataBase = {key=>getFromDatabase(key)}
         saveComponentToDB = {(key,value)=>createOrUpdataSiteData(key,value)}
-        isAdmin = {isAuthenticated}
+        isAdmin = {window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.hostname === ""}
       />
     </>
   )
