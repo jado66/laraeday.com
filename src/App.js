@@ -13,7 +13,9 @@ import { getSiteData, listSiteData } from './graphql/queries';
 Amplify.configure(awsExports);
 
 function App() {
-  const [isAuthenticated, setIsAthenticated] = useState(false)
+  const [isAuthenticated, setIsAthenticated] = useState(
+    window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.hostname === ""
+  )
 
   useEffect(() => {
     async function fetchMyAPI() {
