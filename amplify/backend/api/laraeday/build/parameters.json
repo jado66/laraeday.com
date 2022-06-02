@@ -2,6 +2,12 @@
     "AppSyncApiName": "laraeday",
     "DynamoDBBillingMode": "PAY_PER_REQUEST",
     "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authlaraedaya9f614d6",
+            "Outputs.UserPoolId"
+        ]
+    },
     "S3DeploymentBucket": "amplify-laraeday-dev-173518-deployment",
-    "S3DeploymentRootKey": "amplify-appsync-files/9c9eed9868a901da7e8b83140e81bd9ffabbef74"
+    "S3DeploymentRootKey": "amplify-appsync-files/f3d85a519d1d8d91ca9de73e6ab56d12c1655b10"
 }

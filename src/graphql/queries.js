@@ -65,3 +65,50 @@ export const listSiteData = /* GraphQL */ `
     }
   }
 `;
+export const getPicture = /* GraphQL */ `
+  query GetPicture($name: String!) {
+    getPicture(name: $name) {
+      name
+      owner
+      group
+      file {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listPictures = /* GraphQL */ `
+  query ListPictures(
+    $name: String
+    $filter: ModelPictureFilterInput
+    $limit: Int
+    $nextToken: String
+    $sortDirection: ModelSortDirection
+  ) {
+    listPictures(
+      name: $name
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
+      items {
+        name
+        owner
+        group
+        file {
+          bucket
+          region
+          key
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;

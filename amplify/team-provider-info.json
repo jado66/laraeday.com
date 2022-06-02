@@ -10,6 +10,12 @@
       "StackName": "amplify-laraeday-dev-173518",
       "StackId": "arn:aws:cloudformation:us-east-1:873479032390:stack/amplify-laraeday-dev-173518/0a54f7f0-9f30-11ec-980f-0e6c58f1d021",
       "AmplifyAppId": "d3nickd7ttnh82"
+    },
+    "categories": {
+      "auth": {
+        "laraedaya9f614d6": {},
+        "true": {}
+      }
     }
   }
 }

@@ -1,0 +1,18 @@
+{
+  "resourceName": "laraedaySiteStorage",
+  "policyUUID": "5733c3cc",
+  "bucketName": "laraeday-bucket",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ",
+    "CREATE_AND_UPDATE",
+    "DELETE"
+  ],
+  "authAccess": [
+    "READ",
+    "CREATE_AND_UPDATE",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

@@ -1,29 +1,34 @@
-import Amplify, { API, graphqlOperation, JS } from 'aws-amplify'
 
-import { addSubscriber, getFromDatabase, checkIP, createOrUpdataSiteData } from "./ApiHooks";
-
-import awsExports from './aws-exports';
-
-import { useState, useEffect } from 'react';
-
-import { createSiteData, deleteSiteData, updateSiteData } from './graphql/mutations'
-
+import { addSubscriber, getFromDatabase, createOrUpdataSiteData, uploadImage, retrieveImage } from "./ApiHooks";
 import Website from "reactive-site-creator/dist/components/Website";
-import { getSiteData, listSiteData } from './graphql/queries';
-Amplify.configure(awsExports);
+import Product from "./customComponents/Product";
+
+const extraComponents = {
+  Product:{
+    component: Product,
+    componentName: "Product",
+    isNestedComponent: false
+  } 
+}
+
 
 function App() {
 
   return (
     <>
       <Website
+
+        componentOptions = {extraComponents}
         addNewSubscriber = {subscriberFormState=>addSubscriber(subscriberFormState)}
         getFromDataBase = {key=>getFromDatabase(key)}
+        retreiveImageFromDB = {fileName=>retrieveImage(fileName)}
+        uploadImageToDB = {(file, callback)=> uploadImage(file,callback)}
         saveComponentToDB = {(key,value)=>createOrUpdataSiteData(key,value)}
-        isAdmin = {window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.hostname === ""}
+        isAdmin = {true}
       />
     </>
   )
 }
 
 export default App;
+

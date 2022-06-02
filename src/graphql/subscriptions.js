@@ -64,3 +64,51 @@ export const onDeleteSiteData = /* GraphQL */ `
     }
   }
 `;
+export const onCreatePicture = /* GraphQL */ `
+  subscription OnCreatePicture {
+    onCreatePicture {
+      name
+      owner
+      group
+      file {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdatePicture = /* GraphQL */ `
+  subscription OnUpdatePicture {
+    onUpdatePicture {
+      name
+      owner
+      group
+      file {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeletePicture = /* GraphQL */ `
+  subscription OnDeletePicture {
+    onDeletePicture {
+      name
+      owner
+      group
+      file {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;

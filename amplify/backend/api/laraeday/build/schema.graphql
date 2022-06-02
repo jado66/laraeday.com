@@ -14,6 +14,21 @@ type SiteData {
   updatedAt: AWSDateTime!
 }
 
+type Picture {
+  name: String!
+  owner: String
+  group: String
+  file: S3Object
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type S3Object {
+  bucket: String!
+  region: String!
+  key: String!
+}
+
 input ModelStringInput {
   ne: String
   eq: String
@@ -124,6 +139,8 @@ type Query {
   listSubscribers(filter: ModelSubscriberFilterInput, limit: Int, nextToken: String): ModelSubscriberConnection
   getSiteData(key: String!): SiteData
   listSiteData(key: String, filter: ModelSiteDataFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelSiteDataConnection
+  getPicture(name: String!): Picture
+  listPictures(name: String, filter: ModelPictureFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelPictureConnection
 }
 
 input ModelSubscriberConditionInput {
@@ -157,6 +174,9 @@ type Mutation {
   createSiteData(input: CreateSiteDataInput!, condition: ModelSiteDataConditionInput): SiteData
   updateSiteData(input: UpdateSiteDataInput!, condition: ModelSiteDataConditionInput): SiteData
   deleteSiteData(input: DeleteSiteDataInput!, condition: ModelSiteDataConditionInput): SiteData
+  createPicture(input: CreatePictureInput!, condition: ModelPictureConditionInput): Picture
+  updatePicture(input: UpdatePictureInput!, condition: ModelPictureConditionInput): Picture
+  deletePicture(input: DeletePictureInput!, condition: ModelPictureConditionInput): Picture
 }
 
 type Subscription {
@@ -166,6 +186,9 @@ type Subscription {
   onCreateSiteData: SiteData @aws_subscribe(mutations: ["createSiteData"])
   onUpdateSiteData: SiteData @aws_subscribe(mutations: ["updateSiteData"])
   onDeleteSiteData: SiteData @aws_subscribe(mutations: ["deleteSiteData"])
+  onCreatePicture: Picture @aws_subscribe(mutations: ["createPicture"])
+  onUpdatePicture: Picture @aws_subscribe(mutations: ["updatePicture"])
+  onDeletePicture: Picture @aws_subscribe(mutations: ["deletePicture"])
 }
 
 type ModelSiteDataConnection {
@@ -200,5 +223,51 @@ input UpdateSiteDataInput {
 
 input DeleteSiteDataInput {
   key: String!
+}
+
+input S3ObjectInput {
+  bucket: String!
+  region: String!
+  key: String!
+}
+
+type ModelPictureConnection {
+  items: [Picture]!
+  nextToken: String
+}
+
+input ModelPictureFilterInput {
+  name: ModelStringInput
+  owner: ModelStringInput
+  group: ModelStringInput
+  and: [ModelPictureFilterInput]
+  or: [ModelPictureFilterInput]
+  not: ModelPictureFilterInput
+}
+
+input ModelPictureConditionInput {
+  owner: ModelStringInput
+  group: ModelStringInput
+  and: [ModelPictureConditionInput]
+  or: [ModelPictureConditionInput]
+  not: ModelPictureConditionInput
+}
+
+input CreatePictureInput {
+  name: String!
+  owner: String
+  group: String
+  file: S3ObjectInput
+}
+
+input UpdatePictureInput {
+  name: String!
+  owner: String
+  group: String
+  file: S3ObjectInput
+}
+
+input DeletePictureInput {
+  name: String!
 }
 

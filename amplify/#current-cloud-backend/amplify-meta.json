@@ -24,7 +24,14 @@
               "apiKeyExpirationDays": 7
             }
           },
-          "additionalAuthenticationProviders": []
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authlaraedaya9f614d6"
+              }
+            }
+          ]
         },
         "GraphQLAPIIdOutput": "xkh2yt23lzg4pjszawym7uc23q",
         "GraphQLAPIEndpointOutput": "https://iafrlvhfujhadfbgx2nxv2tw6m.appsync-api.us-east-1.amazonaws.com/graphql",
@@ -34,8 +41,66 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-laraeday-dev-173518-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apilaraeday"
       },
-      "lastPushTimeStamp": "2022-04-04T21:09:23.015Z",
-      "lastPushDirHash": "+FAsvc87h6V4JMt9N3M107Og+oQ="
+      "lastPushTimeStamp": "2022-04-08T20:51:50.148Z",
+      "lastPushDirHash": "Uc5vrKEzHrDR7l8DLcguvkDMvrQ="
+    }
+  },
+  "auth": {
+    "laraedaya9f614d6": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-laraeday-dev-173518-deployment/amplify-cfn-templates/auth/laraedaya9f614d6-cloudformation-template.json",
+        "logicalId": "authlaraedaya9f614d6"
+      },
+      "lastPushTimeStamp": "2022-04-08T20:51:49.151Z",
+      "output": {
+        "UserPoolId": "us-east-1_SzMviGoLH",
+        "AppClientIDWeb": "79igkn0hkeb2151ecduvhd1tjj",
+        "AppClientID": "42d8nvgsnabonnvbj9m1cjkurd",
+        "IdentityPoolId": "us-east-1:785bbc1b-c371-4d8a-8ec2-3b73f8fdd3ae",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:873479032390:userpool/us-east-1_SzMviGoLH",
+        "IdentityPoolName": "laraedaya9f614d6_identitypool_a9f614d6__dev",
+        "UserPoolName": "laraedaya9f614d6_userpool_a9f614d6"
+      },
+      "lastPushDirHash": "YO33J2vC086CkNy/BBl2+HTtEtw="
+    }
+  },
+  "storage": {
+    "laraedaySiteStorage": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "lastPushTimeStamp": "2022-04-08T20:51:49.157Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-laraeday-dev-173518-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storagelaraedaySiteStorage"
+      },
+      "output": {
+        "BucketName": "laraeday-bucket173518-dev",
+        "Region": "us-east-1"
+      },
+      "lastPushDirHash": "+uminr0qhGrmQbKolnI3ATzgRi8="
     }
   }
 }

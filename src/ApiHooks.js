@@ -1,6 +1,10 @@
-import { API, graphqlOperation } from 'aws-amplify'
-import { createSiteData, createSubscriber, updateSiteData, deleteSiteData } from './graphql/mutations'
-import { getSiteData} from './graphql/queries'
+import Amplify,{ API, graphqlOperation, Storage } from 'aws-amplify'
+import { createSiteData, createSubscriber, updateSiteData, createPicture, deleteSiteData } from './graphql/mutations'
+import { getSiteData, getPicture } from './graphql/queries'
+
+import awsExports from './aws-exports';
+
+Amplify.configure(awsExports);
 
 export async function addSubscriber(subscriberFormState) {
   try {
@@ -68,3 +72,46 @@ export async function checkIP(){
   
 }
  
+
+export async function uploadImage(file, callback){
+    Storage.put(file.name, file, {
+      contentType: 'image/png'
+    })
+    .then((result) =>{
+      callback(URL.createObjectURL(file))
+      console.log(result)
+      
+      const image = {
+        name: file.name,
+        file: {
+          bucket: awsExports.aws_user_files_s3_bucket,
+          region: awsExports.aws_user_files_s3_bucket_region,
+          key: "public/" + file.name
+        }
+      }
+
+      addImageDataToDB(image)
+      console.log("added complete")
+    })
+    .catch(err=>{console.log(err); alert(JSON.stringify(err))});
+}
+
+export async function retrieveImage(fileName){
+  try {
+    const file = await Storage.get(fileName)
+    return file
+
+  } catch (error) {
+    alert(error)
+  }
+}
+
+const addImageDataToDB = async (image) =>{
+  console.log('addImageToDB')
+  try {
+    await API.graphql(graphqlOperation(createPicture, {input:image}))
+  } catch (error) {
+    console.log(error)
+    alert(JSON.stringify(error))
+  }
+}

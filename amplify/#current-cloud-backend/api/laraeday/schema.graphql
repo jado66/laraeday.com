@@ -13,3 +13,17 @@ type SiteData @model {
   key: String! @primaryKey
   value: String!
 }
+
+type Picture @model {
+  name: String! @primaryKey
+  owner: String
+  group: String
+
+  file: S3Object
+}
+
+type S3Object {
+  bucket: String!
+  region: String!
+  key: String!
+}

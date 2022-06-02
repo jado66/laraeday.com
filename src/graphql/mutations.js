@@ -56,17 +56,6 @@ export const createSiteData = /* GraphQL */ `
     }
   }
 `;
-export const createOrUpdataSiteData = /* GraphQL */ `
-  mutation CreateOrUpdateSiteData(
-    $input: CreateSiteDataInput!
-    $condition: ModelSiteDataConditionInput
-  ) {
-    createSiteData(input: $input, condition: $condition) {
-      key
-      value
-    }
-  }
-`;
 export const updateSiteData = /* GraphQL */ `
   mutation UpdateSiteData(
     $input: UpdateSiteDataInput!
@@ -88,6 +77,63 @@ export const deleteSiteData = /* GraphQL */ `
     deleteSiteData(input: $input, condition: $condition) {
       key
       value
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createPicture = /* GraphQL */ `
+  mutation CreatePicture(
+    $input: CreatePictureInput!
+    $condition: ModelPictureConditionInput
+  ) {
+    createPicture(input: $input, condition: $condition) {
+      name
+      owner
+      group
+      file {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updatePicture = /* GraphQL */ `
+  mutation UpdatePicture(
+    $input: UpdatePictureInput!
+    $condition: ModelPictureConditionInput
+  ) {
+    updatePicture(input: $input, condition: $condition) {
+      name
+      owner
+      group
+      file {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deletePicture = /* GraphQL */ `
+  mutation DeletePicture(
+    $input: DeletePictureInput!
+    $condition: ModelPictureConditionInput
+  ) {
+    deletePicture(input: $input, condition: $condition) {
+      name
+      owner
+      group
+      file {
+        bucket
+        region
+        key
+      }
       createdAt
       updatedAt
     }

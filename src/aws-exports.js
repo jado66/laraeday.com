@@ -6,7 +6,30 @@ const awsmobile = {
     "aws_appsync_graphqlEndpoint": "https://iafrlvhfujhadfbgx2nxv2tw6m.appsync-api.us-east-1.amazonaws.com/graphql",
     "aws_appsync_region": "us-east-1",
     "aws_appsync_authenticationType": "API_KEY",
-    "aws_appsync_apiKey": "da2-f5imegqqqvbr5lfzsu7yrwdamm"
+    "aws_appsync_apiKey": "da2-f5imegqqqvbr5lfzsu7yrwdamm",
+    "aws_cognito_identity_pool_id": "us-east-1:785bbc1b-c371-4d8a-8ec2-3b73f8fdd3ae",
+    "aws_cognito_region": "us-east-1",
+    "aws_user_pools_id": "us-east-1_SzMviGoLH",
+    "aws_user_pools_web_client_id": "79igkn0hkeb2151ecduvhd1tjj",
+    "oauth": {},
+    "aws_cognito_username_attributes": [],
+    "aws_cognito_social_providers": [],
+    "aws_cognito_signup_attributes": [
+        "EMAIL"
+    ],
+    "aws_cognito_mfa_configuration": "OFF",
+    "aws_cognito_mfa_types": [
+        "SMS"
+    ],
+    "aws_cognito_password_protection_settings": {
+        "passwordPolicyMinLength": 8,
+        "passwordPolicyCharacters": []
+    },
+    "aws_cognito_verification_mechanisms": [
+        "EMAIL"
+    ],
+    "aws_user_files_s3_bucket": "laraeday-bucket173518-dev",
+    "aws_user_files_s3_bucket_region": "us-east-1"
 };
 
 
